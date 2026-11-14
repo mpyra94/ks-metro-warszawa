@@ -1,0 +1,23 @@
+{
+  "intro": "Tu znajdziesz dokumenty klubowe do pobrania. Poniższa lista jest przykładowa: dodaj własne pliki w panelu (Dokumenty) i usuń zbędne pozycje.",
+  "items": [
+    {
+      "group": "Dla zawodników i rodziców",
+      "title": "Deklaracja członkowska",
+      "description": "Do wypełnienia przy zapisie do klubu.",
+      "file": ""
+    },
+    {
+      "group": "Dla zawodników i rodziców",
+      "title": "Zgoda na przetwarzanie danych i wizerunku",
+      "description": "W przypadku osób niepełnoletnich podpisuje rodzic lub opiekun.",
+      "file": ""
+    },
+    {
+      "group": "Dokumenty klubu",
+      "title": "Regulamin klubu",
+      "description": "Zasady uczestnictwa w zajęciach i meczach.",
+      "file": ""
+    }
+  ]
+}

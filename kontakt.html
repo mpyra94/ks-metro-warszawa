@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Kontakt | KS Metro Warszawa</title>
+  <meta name="description" content="Dane kontaktowe klubu siatkarskiego KS Metro Warszawa.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="kontakt">
+  <a class="skip" href="#main">Przejdź do treści</a>
+  <header class="site-header" id="site-header"></header>
+  <main id="main">
+    <div class="page-head"><div class="wrap">
+      <h1>Kontakt</h1>
+      <p>Masz pytanie albo chcesz dołączyć do klubu? Napisz lub zadzwoń.</p>
+    </div></div>
+    <section class="section"><div class="wrap contact-grid">
+      <div id="contact"></div>
+
+      <!-- Formularz musi być wpisany w HTML na stałe, żeby Netlify wykrył go przy wdrożeniu. -->
+      <div class="contact-card form-card">
+        <h2>Formularz zgłoszeniowy</h2>
+        <p class="form-lead">Wypełnij formularz, a odezwiemy się z propozycją grupy i terminu pierwszego treningu.</p>
+        <form id="signup-form" name="zgloszenie" method="POST" action="/kontakt.html" data-netlify="true" netlify-honeypot="bot-field">
+          <input type="hidden" name="form-name" value="zgloszenie">
+          <p class="hp"><label>Nie wypełniaj tego pola: <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+
+          <div class="field">
+            <label for="f-name">Imię i nazwisko</label>
+            <input id="f-name" name="imie_i_nazwisko" type="text" autocomplete="name" required>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-age">Wiek dziecka</label>
+              <input id="f-age" name="wiek_dziecka" type="number" min="4" max="20" inputmode="numeric" required aria-describedby="f-age-hint">
+              <span class="hint" id="f-age-hint">w latach</span>
+            </div>
+            <div class="field">
+              <label for="f-height">Wzrost</label>
+              <input id="f-height" name="wzrost_cm" type="number" min="90" max="230" inputmode="numeric" aria-describedby="f-height-hint">
+              <span class="hint" id="f-height-hint">w centymetrach</span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="f-level">Poziom zaawansowania</label>
+            <select id="f-level" name="poziom_zaawansowania" required>
+              <option value="">Wybierz poziom</option>
+              <option>Początkujący</option>
+              <option>Średnio zaawansowany</option>
+              <option>Zaawansowany</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-about">Kilka słów o sobie</label>
+            <textarea id="f-about" name="o_sobie" rows="4"></textarea>
+          </div>
+
+          <h3>Dane kontaktowe</h3>
+          <div class="field-row">
+            <div class="field">
+              <label for="f-mail">E-mail</label>
+              <input id="f-mail" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="f-phone">Telefon</label>
+              <input id="f-phone" name="telefon" type="tel" autocomplete="tel">
+            </div>
+          </div>
+          <label class="consent"><input type="checkbox" name="zgoda" value="tak" required>
+            <span>Zgadzam się na przetwarzanie podanych danych przez KS Metro Warszawa w celu kontaktu w sprawie zapisów na zajęcia.</span></label>
+          <button class="btn" type="submit">Wyślij zgłoszenie</button>
+          <p id="form-status" class="form-status" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </div></section>
+    <noscript><div class="wrap section"><p class="error">Ta strona wymaga włączonego JavaScriptu.</p></div></noscript>
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

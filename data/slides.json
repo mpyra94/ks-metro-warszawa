@@ -1,0 +1,28 @@
+{
+  "items": [
+    {
+      "title": "Szkolimy z pasją",
+      "text": "Witamy na nowej stronie naszego klubu. Znajdziesz tu informacje o meczach i treningach drużyn młodzieżowych a także drużyny seniorskiej.",
+      "button_label": "Sprawdź treningi",
+      "button_url": "harmonogram.html",
+      "button2_label": "Skontaktuj się",
+      "button2_url": "kontakt.html"
+    },
+    {
+      "title": "Zapisz się na zajęcia",
+      "text": "Chcesz zacząć przygodę z siatkówką? Napisz lub zadzwoń, podpowiemy, która grupa będzie dla Ciebie najlepsza.",
+      "button_label": "Zapisz się",
+      "button_url": "kontakt.html",
+      "button2_label": "Zobacz harmonogram",
+      "button2_url": "harmonogram.html"
+    },
+    {
+      "title": "Brązowy medal Mistrzostw Polski Kadetów",
+      "text": "Gratulujemy naszym kadetom i dziękujemy wszystkim, którzy nas wspierają.",
+      "button_label": "Zobacz więcej",
+      "button_url": "o-klubie.html#sukcesy",
+      "button2_label": "",
+      "button2_url": ""
+    }
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "intro": "Najważniejsze medale naszych drużyn na Mistrzostwach Polski (na podstawie archiwalnej listy sukcesów klubu).",
+  "items": [
+    {
+      "year": "2025",
+      "team": "Kadeci",
+      "title": "Brązowy medal Mistrzostw Polski Kadetów",
+      "text": "Kadeci KS Metro Warszawa stają na podium mistrzostw Polski."
+    },
+    {
+      "year": "2024",
+      "team": "Seniorzy",
+      "title": "Drugie miejsce w sezonie zasadniczym II ligi",
+      "text": "Seniorzy kończą sezon zasadniczy II ligi (grupa 2) na drugim miejscu i grają w play-offach o awans do I ligi."
+    },
+    {
+      "year": "2013",
+      "team": "Kadeci",
+      "title": "Brązowy medal Mistrzostw Polski Kadetów",
+      "text": "Proszowice 2013, rocznik 1996/97."
+    },
+    {
+      "year": "2013",
+      "team": "Juniorzy",
+      "title": "Brązowy medal Mistrzostw Polski Juniorów",
+      "text": "Leżajsk 2013, rocznik 1994/95/96."
+    },
+    {
+      "year": "2009",
+      "team": "Młodzicy",
+      "title": "Srebrny medal Mistrzostw Polski Młodzików",
+      "text": "Międzyrzecz 2009, rocznik 1994/95."
+    },
+    {
+      "year": "2007",
+      "team": "Młodzicy",
+      "title": "Srebrny medal Mistrzostw Polski Młodzików",
+      "text": "Drawsko Pomorskie 2007, rocznik 1992/93."
+    },
+    {
+      "year": "2006",
+      "team": "Juniorzy",
+      "title": "Brązowy medal Mistrzostw Polski Juniorów",
+      "text": "Kędzierzyn-Koźle 2006, rocznik 1987/88/89."
+    },
+    {
+      "year": "2006",
+      "team": "Młodzicy",
+      "title": "Złoty medal Mistrzostw Polski Młodzików",
+      "text": "Hel i Jastarnia 2006, rocznik 1991/92."
+    },
+    {
+      "year": "2005",
+      "team": "Kadeci",
+      "title": "Złoty medal Mistrzostw Polski Kadetów",
+      "text": "Świdnik 2005, rocznik 1988/89."
+    },
+    {
+      "year": "2005",
+      "team": "Młodzicy",
+      "title": "Srebrny medal Mistrzostw Polski Młodzików",
+      "text": "Malbork 2005, rocznik 1990/91."
+    },
+    {
+      "year": "2004",
+      "team": "Kadeci",
+      "title": "Srebrny medal Mistrzostw Polski Kadetów",
+      "text": "Piła 2004, rocznik 1987/88."
+    },
+    {
+      "year": "2002",
+      "team": "Młodzicy",
+      "title": "Złoty medal Mistrzostw Polski Młodzików",
+      "text": "Warszawa 2002, rocznik 1987/88."
+    },
+    {
+      "year": "2001",
+      "team": "Młodzicy",
+      "title": "Złoty medal Mistrzostw Polski Młodzików",
+      "text": "Łódź 2001, rocznik 1986/87."
+    },
+    {
+      "year": "1999",
+      "team": "Młodzicy",
+      "title": "Srebrny medal Mistrzostw Polski Młodzików",
+      "text": "Suwałki 1999, rocznik 1984/85 — pierwszy medal Mistrzostw Polski w historii klubu."
+    }
+  ]
+}

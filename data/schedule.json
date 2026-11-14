@@ -1,0 +1,133 @@
+{
+  "note": "Godziny przykładowe. Aktualny harmonogram potwierdza klub.",
+  "items": [
+    {
+      "day": "Poniedziałek",
+      "from": "16:00",
+      "to": "17:30",
+      "group": "Mini siatkówka",
+      "place": "",
+      "notes": "Dzieci 7-10 lat"
+    },
+    {
+      "day": "Poniedziałek",
+      "from": "17:30",
+      "to": "19:00",
+      "group": "Młodzicy",
+      "place": "",
+      "notes": "11-13 lat"
+    },
+    {
+      "day": "Poniedziałek",
+      "from": "19:00",
+      "to": "21:00",
+      "group": "Seniorzy",
+      "place": "",
+      "notes": ""
+    },
+    {
+      "day": "Wtorek",
+      "from": "16:30",
+      "to": "18:00",
+      "group": "Kadeci II",
+      "place": "",
+      "notes": ""
+    },
+    {
+      "day": "Wtorek",
+      "from": "18:00",
+      "to": "19:30",
+      "group": "Kadeci I",
+      "place": "",
+      "notes": ""
+    },
+    {
+      "day": "Wtorek",
+      "from": "19:30",
+      "to": "21:30",
+      "group": "Seniorzy II",
+      "place": "",
+      "notes": ""
+    },
+    {
+      "day": "Środa",
+      "from": "16:00",
+      "to": "17:30",
+      "group": "Mini siatkówka",
+      "place": "",
+      "notes": "Dzieci 7-10 lat"
+    },
+    {
+      "day": "Środa",
+      "from": "17:30",
+      "to": "19:00",
+      "group": "Juniorzy II",
+      "place": "",
+      "notes": ""
+    },
+    {
+      "day": "Środa",
+      "from": "19:00",
+      "to": "20:30",
+      "group": "Juniorzy I",
+      "place": "",
+      "notes": ""
+    },
+    {
+      "day": "Czwartek",
+      "from": "16:30",
+      "to": "18:00",
+      "group": "Młodzicy",
+      "place": "",
+      "notes": "11-13 lat"
+    },
+    {
+      "day": "Czwartek",
+      "from": "18:00",
+      "to": "19:30",
+      "group": "Kadeci I",
+      "place": "",
+      "notes": ""
+    },
+    {
+      "day": "Czwartek",
+      "from": "19:30",
+      "to": "21:30",
+      "group": "Seniorzy",
+      "place": "",
+      "notes": ""
+    },
+    {
+      "day": "Piątek",
+      "from": "16:00",
+      "to": "17:30",
+      "group": "Kadeci II",
+      "place": "",
+      "notes": ""
+    },
+    {
+      "day": "Piątek",
+      "from": "17:30",
+      "to": "19:00",
+      "group": "Juniorzy I i II",
+      "place": "",
+      "notes": "Trening wspólny"
+    },
+    {
+      "day": "Piątek",
+      "from": "19:00",
+      "to": "21:00",
+      "group": "Seniorzy II",
+      "place": "",
+      "notes": ""
+    },
+    {
+      "day": "Sobota",
+      "from": "10:00",
+      "to": "11:30",
+      "group": "Trening otwarty",
+      "place": "",
+      "notes": "Dla nowych osób, po wcześniejszym zgłoszeniu"
+    }
+  ]
+}

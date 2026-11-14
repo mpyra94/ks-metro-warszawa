@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>KS Metro Warszawa: klub siatkarski</title>
+  <meta name="description" content="KS Metro Warszawa: klub siatkarski, który od 1994 roku szkoli z pasją. Nadchodzące mecze, drużyny, harmonogram treningów i kontakt.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="index">
+  <a class="skip" href="#main">Przejdź do treści</a>
+  <header class="site-header" id="site-header"></header>
+
+  <main id="main">
+    <h1 class="sr-only">KS Metro Warszawa: klub siatkarski</h1>
+
+    <!-- Slajdy wczytują się z data/slides.json (panel: Strona główna → Slider) -->
+    <section class="hero" aria-roledescription="karuzela" aria-label="Najważniejsze informacje">
+      <div class="wrap" id="slider">
+        <div class="slides">
+          <div class="slide is-active">
+            <p class="slide-title">Szkolimy z pasją</p>
+            <p class="hero-lead">Witamy na nowej stronie naszego klubu. Znajdziesz tu informacje o meczach i treningach drużyn młodzieżowych a także drużyny seniorskiej.</p>
+            <div class="hero-actions">
+              <a class="btn" href="harmonogram.html">Sprawdź treningi</a>
+              <a class="btn btn-ghost" href="kontakt.html">Skontaktuj się</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="wrap strip-wrap">
+      <aside class="next-match" id="next-match" aria-live="polite"></aside>
+    </div>
+
+    <section class="section">
+      <div class="wrap cols cols-fb">
+        <div>
+          <h2 class="section-title">Aktualności</h2>
+          <div class="fb-box" id="fb"></div>
+        </div>
+        <div>
+          <h2 class="section-title">Nadchodzące mecze</h2>
+          <div class="fb-box matches-box" id="matches"></div>
+          <p style="margin-top:1.25rem"><a class="btn btn-small" href="mecze.html">Cały terminarz</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Zdjęcia wczytują się z data/gallery.json (panel: Strona główna → Zdjęcia „Z boiska”) -->
+    <section class="section section-alt">
+      <div class="wrap">
+        <h2 class="section-title">Z boiska</h2>
+        <div id="gallery"></div>
+      </div>
+    </section>
+
+    <section class="join">
+      <div class="wrap">
+        <div>
+          <h2>Szkolimy z pasją od 1994 roku</h2>
+          <p>Chcesz zacząć przygodę z siatkówką albo zapisać dziecko na trening próbny? Napisz do nas.</p>
+        </div>
+        <a class="btn" href="kontakt.html">Napisz do nas</a>
+      </div>
+    </section>
+
+    <!-- Loga partnerów wczytują się z data/settings.json (panel: Ustawienia strony → Zaufali nam) -->
+    <section class="section section-alt" id="partners-wrap" hidden>
+      <div class="wrap" id="partners"></div>
+    </section>
+    <noscript><div class="wrap section"><p class="error">Ta strona wymaga włączonego JavaScriptu.</p></div></noscript>
+  </main>
+
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

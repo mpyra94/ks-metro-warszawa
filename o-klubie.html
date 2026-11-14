@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="pl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O klubie | KS Metro Warszawa</title>
+  <meta name="description" content="O klubie siatkarskim KS Metro Warszawa: historia, absolwenci i sukcesy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="o-klubie">
+  <a class="skip" href="#main">Przejdź do treści</a>
+  <header class="site-header" id="site-header"></header>
+  <main id="main">
+    <div class="page-head"><div class="wrap">
+      <h1>O klubie</h1>
+      <p>Historia, absolwenci i sukcesy KS Metro Warszawa.</p>
+    </div></div>
+    <section class="section"><div class="wrap">
+      <div class="filters tabs" role="tablist" aria-label="O klubie">
+        <button type="button" class="chip" role="tab" id="tab-historia" data-tab="historia" aria-controls="panel-historia" aria-selected="true">Historia</button>
+        <button type="button" class="chip" role="tab" id="tab-absolwenci" data-tab="absolwenci" aria-controls="panel-absolwenci" aria-selected="false" tabindex="-1">Absolwenci</button>
+        <button type="button" class="chip" role="tab" id="tab-sukcesy" data-tab="sukcesy" aria-controls="panel-sukcesy" aria-selected="false" tabindex="-1">Sukcesy</button>
+      </div>
+      <div id="panel-historia" role="tabpanel" aria-labelledby="tab-historia" tabindex="0">
+        <div id="history-intro"></div>
+        <div id="timeline"></div>
+      </div>
+      <div id="panel-absolwenci" role="tabpanel" aria-labelledby="tab-absolwenci" tabindex="0" hidden>
+        <div id="alumni"></div>
+      </div>
+      <div id="panel-sukcesy" role="tabpanel" aria-labelledby="tab-sukcesy" tabindex="0" hidden>
+        <div id="achievements"></div>
+      </div>
+    </div></section>
+    <noscript><div class="wrap section"><p class="error">Ta strona wymaga włączonego JavaScriptu.</p></div></noscript>
+  </main>
+  <footer class="site-footer" id="site-footer"></footer>
+  <script src="js/main.js"></script>
+</body>
+</html>

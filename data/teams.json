@@ -1,0 +1,85 @@
+{
+  "items": [
+    {
+      "name": "Seniorzy",
+      "category": "Seniorzy",
+      "league": "II liga (grupa 2)",
+      "description": "Drużyna seniorów KS Metro Warszawa.",
+      "photo": "",
+      "players": [],
+      "coaches": []
+    },
+    {
+      "name": "Seniorzy II",
+      "category": "Seniorzy",
+      "league": "IV liga seniorów",
+      "description": "Druga drużyna seniorów KS Metro Warszawa.",
+      "photo": "",
+      "coaches": [],
+      "players": []
+    },
+    {
+      "name": "Juniorzy I",
+      "category": "Juniorzy",
+      "league": "",
+      "description": "Pierwsza drużyna juniorów (KS Metro Family Warszawa I).",
+      "photo": "",
+      "players": [],
+      "coaches": []
+    },
+    {
+      "name": "Juniorzy II",
+      "category": "Juniorzy",
+      "league": "",
+      "description": "Druga drużyna juniorów (KS Metro Family Warszawa II).",
+      "photo": "",
+      "players": [],
+      "coaches": []
+    },
+    {
+      "name": "Kadeci I",
+      "category": "Kadeci",
+      "league": "",
+      "description": "Pierwsza drużyna kadetów (KS Metro Family Warszawa I).",
+      "photo": "",
+      "players": [],
+      "coaches": []
+    },
+    {
+      "name": "Kadeci II",
+      "category": "Kadeci",
+      "league": "",
+      "description": "Druga drużyna kadetów (KS Metro Family Warszawa II).",
+      "photo": "",
+      "players": [],
+      "coaches": []
+    },
+    {
+      "name": "Młodzicy I",
+      "category": "Młodzicy",
+      "league": "",
+      "description": "Pierwsza drużyna młodzików KS Metro Warszawa.",
+      "photo": "",
+      "coaches": [],
+      "players": []
+    },
+    {
+      "name": "Młodzicy II",
+      "category": "Młodzicy",
+      "league": "",
+      "description": "Druga drużyna młodzików KS Metro Warszawa.",
+      "photo": "",
+      "coaches": [],
+      "players": []
+    },
+    {
+      "name": "Mini siatkówka",
+      "category": "Mini siatkówka",
+      "league": "",
+      "description": "Najmłodsza grupa KS Metro Warszawa – pierwsze kroki w siatkówce dla dzieci w wieku 7-10 lat.",
+      "photo": "",
+      "coaches": [],
+      "players": []
+    }
+  ]
+}

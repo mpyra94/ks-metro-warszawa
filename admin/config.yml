@@ -1,0 +1,259 @@
+# Panel administracyjny (Decap CMS) dla KS Metro Warszawa.
+# Przed wdrożeniem ustaw w "repo" swój login GitHub i nazwę repozytorium.
+backend:
+  name: github
+  repo: mpyra94/ks-metro-warszawa
+  branch: main
+
+locale: pl
+media_folder: images/uploads
+public_folder: /images/uploads
+site_url: https://mpyra94.github.io/ks-metro-warszawa/
+display_url: https://mpyra94.github.io/ks-metro-warszawa/
+
+collections:
+  - name: mecze
+    label: Mecze
+    files:
+      - name: mecze
+        label: Terminarz meczów
+        file: data/matches.json
+        fields:
+          - label: Mecze
+            name: items
+            widget: list
+            label_singular: mecz
+            summary: "{{fields.date}} | {{fields.team}} | {{fields.home}} – {{fields.away}}"
+            fields:
+              - { label: Termin, name: date, widget: datetime, format: "YYYY-MM-DDTHH:mm", date_format: "DD.MM.YYYY", time_format: "HH:mm" }
+              - { label: Kategoria (do filtrowania), name: category, widget: string, required: false }
+              - { label: Drużyna klubu (np. Juniorzy I), name: team, widget: string, required: false }
+              - { label: Numer kolejki, name: round, widget: number, value_type: int, min: 1, required: false }
+              - { label: Gospodarz, name: home, widget: string }
+              - { label: Gość, name: away, widget: string }
+              - label: Rodzaj meczu
+                name: kind
+                widget: select
+                options:
+                  - { label: Mecz domowy, value: dom }
+                  - { label: Wyjazd, value: wyjazd }
+                  - { label: Derby klubowe, value: derby }
+                required: false
+              - { label: Rozgrywki, name: league, widget: string, required: false }
+              - { label: Miejsce (hala, adres), name: venue, widget: string, required: false }
+              - { label: Wynik (np. 3:1), name: result, widget: string, required: false }
+              - { label: Dodatkowa informacja, name: info, widget: string, required: false }
+
+  - name: o_klubie
+    label: O klubie
+    files:
+      - name: historia
+        label: Historia
+        file: data/history.json
+        fields:
+          - { label: Wstęp, name: intro, widget: text, required: false }
+          - label: Wydarzenia
+            name: items
+            widget: list
+            label_singular: wydarzenie
+            summary: "{{fields.year}} | {{fields.title}}"
+            fields:
+              - { label: Rok, name: year, widget: string }
+              - { label: Tytuł, name: title, widget: string }
+              - { label: Opis, name: text, widget: text }
+      - name: absolwenci
+        label: Absolwenci
+        file: data/alumni.json
+        fields:
+          - { label: Wstęp, name: intro, widget: text, required: false }
+          - label: Absolwenci
+            name: items
+            widget: list
+            label_singular: absolwenta
+            summary: "{{fields.name}}"
+            fields:
+              - { label: Imię i nazwisko, name: name, widget: string }
+              - { label: "Lata w klubie (np. 2010-2016)", name: years, widget: string, required: false }
+              - { label: "Kilka zdań (np. gdzie gra teraz)", name: text, widget: text, required: false }
+              - { label: Zdjęcie, name: photo, widget: image, required: false }
+      - name: sukcesy
+        label: Sukcesy
+        file: data/achievements.json
+        fields:
+          - { label: Wstęp, name: intro, widget: text, required: false }
+          - label: Sukcesy
+            name: items
+            widget: list
+            label_singular: sukces
+            summary: "{{fields.year}} | {{fields.title}}"
+            fields:
+              - { label: Rok, name: year, widget: string }
+              - { label: "Drużyna (np. Kadeci)", name: team, widget: string, required: false }
+              - { label: Tytuł, name: title, widget: string }
+              - { label: Opis, name: text, widget: text, required: false }
+
+  - name: trenerzy
+    label: Trenerzy
+    files:
+      - name: trenerzy
+        label: Lista trenerów
+        file: data/coaches.json
+        fields:
+          - label: Trenerzy
+            name: items
+            widget: list
+            label_singular: trenera
+            summary: "{{fields.name}} | {{fields.role}}"
+            fields:
+              - { label: Imię i nazwisko, name: name, widget: string }
+              - { label: Funkcja, name: role, widget: string }
+              - { label: Drużyna lub grupa, name: team, widget: string, required: false }
+              - { label: "Opis (widoczny na podstronie trenera; akapity oddzielaj pustą linią)", name: bio, widget: text, required: false }
+              - { label: Zdjęcie, name: photo, widget: image, required: false }
+
+  - name: druzyny
+    label: Drużyny
+    files:
+      - name: druzyny
+        label: Lista drużyn
+        file: data/teams.json
+        fields:
+          - label: Drużyny
+            name: items
+            widget: list
+            label_singular: drużynę
+            summary: "{{fields.name}}"
+            fields:
+              - { label: "Nazwa (np. Juniorzy I)", name: name, widget: string }
+              - { label: "Kategoria (taka sama jak w meczach, np. Juniorzy)", name: category, widget: string, required: false }
+              - { label: "Rozgrywki (liga)", name: league, widget: string, required: false }
+              - { label: Opis, name: description, widget: text, required: false }
+              - { label: Zdjęcie drużyny, name: photo, widget: image, required: false }
+              - label: "Trenerzy (wybierz z zakładki Trenerzy)"
+                name: coaches
+                widget: relation
+                collection: trenerzy
+                file: trenerzy
+                search_fields: ["items.*.name"]
+                value_field: "items.*.name"
+                display_fields: ["items.*.name"]
+                multiple: true
+                required: false
+              - label: Skład drużyny
+                name: players
+                widget: list
+                label_singular: zawodnika
+                summary: "{{fields.number}} {{fields.name}}"
+                required: false
+                fields:
+                  - { label: Imię i nazwisko, name: name, widget: string }
+                  - { label: Numer na koszulce, name: number, widget: string, required: false }
+                  - { label: Pozycja, name: position, widget: string, required: false }
+
+  - name: harmonogram
+    label: Harmonogram treningów
+    files:
+      - name: harmonogram
+        label: Harmonogram treningów
+        file: data/schedule.json
+        fields:
+          - { label: Uwaga pod harmonogramem, name: note, widget: string, required: false }
+          - label: Zajęcia
+            name: items
+            widget: list
+            label_singular: zajęcia
+            summary: "{{fields.day}} {{fields.from}} | {{fields.group}}"
+            fields:
+              - label: Dzień tygodnia
+                name: day
+                widget: select
+                options: [Poniedziałek, Wtorek, Środa, Czwartek, Piątek, Sobota, Niedziela]
+              - { label: Od (np. 17:30), name: from, widget: string }
+              - { label: Do (np. 19:00), name: to, widget: string }
+              - { label: Grupa, name: group, widget: string }
+              - { label: Miejsce, name: place, widget: string, required: false }
+              - { label: Uwagi (np. wiek), name: notes, widget: string, required: false }
+
+  - name: dokumenty
+    label: Dokumenty
+    files:
+      - name: dokumenty
+        label: Dokumenty do pobrania
+        file: data/documents.json
+        media_folder: /files
+        public_folder: /files
+        fields:
+          - { label: Wstęp, name: intro, widget: text, required: false }
+          - label: Dokumenty
+            name: items
+            widget: list
+            label_singular: dokument
+            summary: "{{fields.group}} | {{fields.title}}"
+            fields:
+              - { label: Grupa (np. Dla rodziców), name: group, widget: string, required: false }
+              - { label: Nazwa dokumentu, name: title, widget: string }
+              - { label: Krótki opis, name: description, widget: text, required: false }
+              - { label: Plik (PDF, DOCX itp.), name: file, widget: file, required: false }
+
+  - name: kontakt
+    label: Kontakt
+    files:
+      - name: kontakt
+        label: Dane kontaktowe
+        file: data/contact.json
+        fields:
+          - { label: Adres, name: address, widget: text }
+          - { label: E-mail, name: email, widget: string }
+          - { label: Telefon, name: phone, widget: string }
+          - { label: Godziny pracy biura, name: hours, widget: string, required: false }
+          - { label: "Link do mapy (adres do osadzenia, https://...)", name: map_url, widget: string, required: false }
+          - { label: "Link przycisku Wyznacz trasę (https://...)", name: route_url, widget: string, required: false }
+          - { label: Dodatkowy tekst, name: extra, widget: text, required: false }
+
+  - name: strona_glowna
+    label: Strona główna
+    files:
+      - name: slajdy
+        label: "Slider (góra strony głównej)"
+        file: data/slides.json
+        fields:
+          - label: Slajdy
+            name: items
+            widget: list
+            label_singular: slajd
+            summary: "{{fields.title}}"
+            fields:
+              - { label: Tytuł, name: title, widget: string }
+              - { label: Tekst, name: text, widget: text, required: false }
+              - { label: Napis na przycisku, name: button_label, widget: string, required: false }
+              - { label: "Adres przycisku (np. kontakt.html)", name: button_url, widget: string, required: false }
+              - { label: Napis na drugim przycisku, name: button2_label, widget: string, required: false }
+              - { label: Adres drugiego przycisku, name: button2_url, widget: string, required: false }
+      - name: galeria
+        label: "Zdjęcia w karuzeli Z boiska"
+        file: data/gallery.json
+        fields:
+          - label: Zdjęcia
+            name: items
+            widget: list
+            label_singular: zdjęcie
+            summary: "{{fields.alt}}"
+            fields:
+              - { label: Zdjęcie, name: image, widget: image }
+              - { label: "Opis zdjęcia (dla osób korzystających z czytników ekranu)", name: alt, widget: string, required: false }
+              - { label: "Autor (np. Fot. Jan Kowalski)", name: credit, widget: string, required: false }
+
+  - name: ustawienia
+    label: Ustawienia strony
+    files:
+      - name: ustawienia
+        label: Ustawienia ogólne
+        file: data/settings.json
+        fields:
+          - { label: Nazwa klubu, name: club_name, widget: string }
+          - { label: Hasło pod nazwą, name: tagline, widget: string }
+          - { label: Adres profilu na Facebooku (https://...), name: facebook_url, widget: string, required: false }
+          - { label: Adres profilu na Instagramie (https://...), name: instagram_url, widget: string, required: false }
+          - { label: Kod widżetu z postami (opcjonalnie, np. Elfsight; zastępuje wtyczkę Facebooka), name: news_widget_code, widget: text, required: false }
+          - { label: "Zaufali nam (baner z logotypami partnerów/sponsorów na dole strony głównej)", name: partners_image, widget: image, required: false }
+          - { label: Dopisek w stopce, name: footer_note, widget: string, required: false }

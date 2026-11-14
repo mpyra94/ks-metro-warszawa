@@ -1,0 +1,6 @@
+# Strona jest statyczna: publikowany jest cały folder, bez budowania.
+[build]
+  publish = "."
+
+[functions]
+  directory = "netlify/functions"
