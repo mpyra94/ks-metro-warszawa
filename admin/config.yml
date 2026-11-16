@@ -2,14 +2,14 @@
 # Przed wdrożeniem ustaw w "repo" swój login GitHub i nazwę repozytorium.
 backend:
   name: github
-  repo: mpyra94/ks-metro-warszawa
+  repo: TWOJ_LOGIN_GITHUB/ks-metro-warszawa
   branch: main
 
 locale: pl
 media_folder: images/uploads
 public_folder: /images/uploads
-site_url: https://mpyra94.github.io/ks-metro-warszawa/
-display_url: https://mpyra94.github.io/ks-metro-warszawa/
+site_url: https://TWOJA-DOMENA.pl
+display_url: https://TWOJA-DOMENA.pl
 
 collections:
   - name: mecze
