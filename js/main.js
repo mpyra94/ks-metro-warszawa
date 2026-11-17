@@ -896,6 +896,27 @@
     }).join(''));
   }
 
+  /* Dopasowuje wysokość przewijanej listy „Nadchodzące mecze” do wysokości widżetu
+     Facebooka („Aktualności”) na stronie głównej — tylko na szerszych ekranach, gdzie
+     kolumny stoją obok siebie (patrz @media (min-width: 861px) w css/style.css).
+     Widżet FB (np. Elfsight) dogrywa swoją wysokość asynchronicznie, więc pilnujemy
+     tego przez ResizeObserver zamiast jednorazowego odczytu przy starcie. */
+  function syncMatchesHeight() {
+    var fb = $('fb'), matches = $('matches');
+    if (!fb || !matches) return;
+    var mq = window.matchMedia('(min-width: 861px)');
+    function apply() {
+      matches.style.maxHeight = mq.matches ? fb.offsetHeight + 'px' : '';
+    }
+    if (typeof ResizeObserver !== 'undefined') {
+      new ResizeObserver(apply).observe(fb);
+    } else {
+      window.addEventListener('resize', apply);
+    }
+    if (mq.addEventListener) mq.addEventListener('change', apply); else mq.addListener(apply);
+    apply();
+  }
+
   /* ---------- start ---------- */
   function fail(err) {
     var main = document.querySelector('main');
@@ -917,6 +938,7 @@
       jobs.push(loadOptional('gallery').then(renderGallery));
       renderFacebook(settings, 640);
       renderPartners(settings);
+      syncMatchesHeight();
     } else if (page === 'mecze') {
       jobs.push(load('matches').then(renderMatchesPage));
     } else if (page === 'o-klubie') {
