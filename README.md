@@ -96,7 +96,7 @@ Folder `tools/` jest publiczny razem z resztą strony. Nie wrzucaj tam niczego p
 
 Posty z profilu https://www.facebook.com/ksmetro ładują się na stronie głównej od razu, bez klikania. Strona próbuje po kolei trzech sposobów:
 
-1. **Kod widżetu** wklejony w panelu („Ustawienia strony” → „Kod widżetu z postami”). Obecnie puste — ten sposób jest wyłączony, bo widżety typu Elfsight renderowały się węziej niż kolumna „Aktualności” na stronie głównej. Zostawione jako opcja, gdyby kiedyś się przydała (np. inny dostawca widżetu).
+1. **Kod widżetu** wklejony w panelu („Ustawienia strony” → „Kod widżetu z postami”) — obecnie aktywny, domyślny sposób (Elfsight „Facebook Feed”). Kolumna „Aktualności” na stronie głównej ma szerokość 810 px (na ekranach ≥1200 px) i mniej na węższych. W ustawieniach widżetu w panelu Elfsight warto ustawić szerokość na „Adaptive”/„100%” zamiast sztywnej liczby pikseli, żeby widżet dopasowywał się do kolumny na każdym rozmiarze ekranu zamiast renderować się węziej niż kontener.
 2. **Własna funkcja** `netlify/functions/fb-posts.js` (obecnie aktywny, domyślny sposób), która pobiera posty przez oficjalne API Facebooka i pokazuje je we własnych, stylowanych kartach dopasowanych do wyglądu strony — bez żadnej marki firmy trzeciej. Wymaga tokenu dostępu strony (trzeba być administratorem profilu i założyć aplikację na developers.facebook.com). Token wpisujesz w Netlify jako zmienną środowiskową `FB_PAGE_TOKEN` („Site configuration” → „Environment variables”) i wdrażasz stronę ponownie. Tokenu nie wolno wpisywać do plików strony. **Działa tylko przy hostingu na Netlify** — funkcje serverless nie działają np. na GitHub Pages.
 
    **Skąd wziąć token (musisz być administratorem profilu facebook.com/ksmetro):**

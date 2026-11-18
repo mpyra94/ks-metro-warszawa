@@ -4,6 +4,6 @@
   "facebook_url": "https://www.facebook.com/ksmetro",
   "instagram_url": "https://www.instagram.com/ksmetro",
   "footer_note": "",
-  "news_widget_code": "",
+  "news_widget_code": "<script src=\"https://elfsightcdn.com/platform.js\" async></script>\n<div class=\"elfsight-app-f4f228c4-a394-4e20-bd8a-015194498b6f\" data-elfsight-app-lazy></div>",
   "partners_image": "images/partnerzy.png"
 }
