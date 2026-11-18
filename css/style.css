@@ -199,10 +199,14 @@ p { margin: 0 0 1em; }
 .cols-fb { grid-template-columns: minmax(0, 3fr) minmax(0, 1fr); }
 .matches-box { border-top-color: var(--red); }
 @media (min-width: 861px) {
+  /* Stały wspólny nagłówek: niezależnie od tego, czy "Nadchodzące mecze" zajmie
+     jedną czy dwie linie, oba paski (niebieski/czerwony) i pudełka pod nimi
+     zaczynają się na tej samej wysokości. */
+  .cols-fb h2.section-title { min-height: calc(2.3em + .5rem); display: flex; align-items: flex-end; }
   /* Nadchodzące mecze: węższa (1/4 ekranu), kompaktowa, przewijana kolumna obok
-     widżetu Facebooka. Maksymalną wysokość (dopasowaną do wysokości widżetu FB,
-     który dogrywa się asynchronicznie) ustawia js/main.js (syncMatchesHeight). */
-  .matches-box { overflow-y: auto; }
+     widżetu Facebooka. Wspólną maksymalną wysokość obu pudełek (bez wolnej
+     przestrzeni w krótszym z nich) ustawia js/main.js (syncColumnsHeight). */
+  #fb, .matches-box { overflow-y: auto; }
   .matches-box .match-list { gap: .5rem; }
   .matches-box .match { grid-template-columns: 44px 1fr; gap: .6rem; padding: .5rem .6rem; border-left-width: 4px; }
   .matches-box .match-date { padding: .2rem 0; }

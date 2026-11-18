@@ -896,25 +896,35 @@
     }).join(''));
   }
 
-  /* Dopasowuje wysokość przewijanej listy „Nadchodzące mecze” do wysokości widżetu
-     Facebooka („Aktualności”) na stronie głównej — tylko na szerszych ekranach, gdzie
-     kolumny stoją obok siebie (patrz @media (min-width: 861px) w css/style.css).
+  /* Wyrównuje dół kolumn „Aktualności” i „Nadchodzące mecze” na stronie głównej —
+     tylko na szerszych ekranach, gdzie kolumny stoją obok siebie (patrz
+     @media (min-width: 861px) w css/style.css). Każda kolumna dostaje tę samą
+     wysokość: mniejszą z dwóch naturalnych wysokości (scrollHeight działa niezależnie
+     od tego, czy overflow jest już przycięty), więc żadna z nich nie ma „wolnej
+     przestrzeni” — krótsza po prostu pokazuje się w całości, dłuższa się przewija.
      Widżet FB (np. Elfsight) dogrywa swoją wysokość asynchronicznie, więc pilnujemy
-     tego przez ResizeObserver zamiast jednorazowego odczytu przy starcie. */
-  function syncMatchesHeight() {
+     obu kolumn przez ResizeObserver i dodatkowo przeliczamy kilka razy po starcie. */
+  function syncColumnsHeight() {
     var fb = $('fb'), matches = $('matches');
     if (!fb || !matches) return;
     var mq = window.matchMedia('(min-width: 861px)');
     function apply() {
-      matches.style.maxHeight = mq.matches ? fb.offsetHeight + 'px' : '';
+      if (!mq.matches) { fb.style.maxHeight = ''; matches.style.maxHeight = ''; return; }
+      var h = Math.min(fb.scrollHeight, matches.scrollHeight);
+      if (h > 0) {
+        fb.style.maxHeight = h + 'px';
+        matches.style.maxHeight = h + 'px';
+      }
     }
     if (typeof ResizeObserver !== 'undefined') {
       new ResizeObserver(apply).observe(fb);
+      new ResizeObserver(apply).observe(matches);
     } else {
       window.addEventListener('resize', apply);
     }
     if (mq.addEventListener) mq.addEventListener('change', apply); else mq.addListener(apply);
     apply();
+    [300, 800, 1500, 3000].forEach(function (t) { setTimeout(apply, t); });
   }
 
   /* ---------- start ---------- */
@@ -938,7 +948,7 @@
       jobs.push(loadOptional('gallery').then(renderGallery));
       renderFacebook(settings, 640);
       renderPartners(settings);
-      syncMatchesHeight();
+      syncColumnsHeight();
     } else if (page === 'mecze') {
       jobs.push(load('matches').then(renderMatchesPage));
     } else if (page === 'o-klubie') {
