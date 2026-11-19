@@ -77,7 +77,7 @@
     }).join('');
     show('site-header',
       '<div class="wrap">' +
-      '<a class="brand" href="index.html" title="Strona główna"><img src="images/logo-white.png" alt="">' + esc(settings.club_name) + '</a>' +
+      '<a class="brand" href="index.html" title="Strona główna"><img src="images/logo-white.png" alt=""><span class="brand-name">' + esc(settings.club_name) + '</span></a>' +
       '<button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav">Menu</button>' +
       '<nav class="nav" id="nav" aria-label="Główna nawigacja"><ul>' + links + '</ul></nav>' +
       '</div>');
