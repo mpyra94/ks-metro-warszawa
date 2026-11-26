@@ -255,5 +255,6 @@ collections:
           - { label: Adres profilu na Facebooku (https://...), name: facebook_url, widget: string, required: false }
           - { label: Adres profilu na Instagramie (https://...), name: instagram_url, widget: string, required: false }
           - { label: Kod widżetu z postami (opcjonalnie, np. Elfsight; zastępuje wtyczkę Facebooka), name: news_widget_code, widget: text, required: false }
+          - { label: "Link do najnowszej galerii zdjęć z Facebooka (do karuzeli „Z boiska” na stronie głównej)", name: gallery_source_url, widget: string, required: false, hint: "Wklej tu link do posta/galerii ze zdjęciami z ostatniego meczu domowego. To pole samo niczego nie zmienia na stronie — to tylko notatka, skąd wziąć zdjęcia przy następnej aktualizacji karuzeli (np. razem z Claude)." }
           - { label: "Zaufali nam (baner z logotypami partnerów/sponsorów na dole strony głównej)", name: partners_image, widget: image, required: false }
           - { label: Dopisek w stopce, name: footer_note, widget: string, required: false }
